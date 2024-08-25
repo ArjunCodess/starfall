@@ -9,9 +9,10 @@ export type User = {
     name: string;
     email: string;
     clerkId: string;
-    firstName: string;
-    lastName: string;
+    firstName: string | null;
+    lastName: string | null;
+    username: string | null;
     photo: string;
-    createdAt: Date;
-    updatedAt: Date;
-} | null;
+    createdAt: Date | number | null;
+    updatedAt: Date | number | null;
+};

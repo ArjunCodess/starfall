@@ -44,7 +44,7 @@ export async function POST(req: Request) {
     const eventType = evt.type;
 
     if (eventType === "user.created") {
-        const { id, email_addresses, image_url, first_name, last_name, username } = evt.data;
+        const { id, email_addresses, image_url, first_name, last_name, username, created_at, updated_at } = evt.data;
 
         const user = {
             clerkId: id,
@@ -52,9 +52,13 @@ export async function POST(req: Request) {
             name: username!,
             firstName: first_name,
             lastName: last_name,
+            username: username,
             photo: image_url,
+            created_at: created_at,
+            updated_at: updated_at,
         };
 
+        // @ts-ignore
         await addUser(user);
         return NextResponse.json({ message: "New user created", user });
     }

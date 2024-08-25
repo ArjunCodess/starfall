@@ -26,11 +26,13 @@ export const addUser = async (user: User) => {
     await db
         .insert(users)
         .values({
+            // @ts-ignore
             clerkId: user?.clerkId,
             email: user?.email,
             name: user?.name!,
             firstName: user?.firstName,
             lastName: user?.lastName,
+            username: user?.username,
             photo: user?.photo,
         })
         .returning({ clerkClientId: users?.clerkId });

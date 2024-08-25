@@ -1,27 +1,27 @@
 "use server";
+
 import { eq } from "drizzle-orm";
 import { revalidatePath } from "next/cache";
 
 import { db } from "@/db/drizzle";
 import { todos } from "@/db/schema";
 
-export const getData = async (userId: number) => {
-    const data = await db.select().from(todos).where(eq(todos?.userId, userId));
+export const getData = async (userId: string) => {
+    const data = await db.select().from(todos).where(eq(todos.userId, userId));
     return data;
 };
 
-export const addTodo = async (id: number, text: string, userId: number) => {
+export const addTodo = async (id: number, text: string, userId: string) => {
     await db.insert(todos).values({
-        id,
-        text: text,
+        id: `${id}`,
+        text,
         userId,
     });
     revalidatePath("/");
 };
 
 export const deleteTodo = async (id: number) => {
-    await db.delete(todos).where(eq(todos.id, id));
-
+    await db.delete(todos).where(eq(todos.id, `${id}`));
     revalidatePath("/");
 };
 
@@ -31,8 +31,7 @@ export const toggleTodo = async (id: number, done: boolean) => {
         .set({
             done: done,
         })
-        .where(eq(todos.id, id));
-
+        .where(eq(todos.id, `${id}`));
     revalidatePath("/");
 };
 
@@ -42,7 +41,6 @@ export const editTodo = async (id: number, text: string) => {
         .set({
             text: text,
         })
-        .where(eq(todos.id, id));
-
+        .where(eq(todos.id, `${id}`));
     revalidatePath("/");
 };

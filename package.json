@@ -28,6 +28,7 @@
     "react": "^18",
     "react-dom": "^18",
     "react-intersection-observer": "^9.13.0",
+    "svix": "^1.30.0",
     "tailwind-merge": "^2.5.2",
     "tailwindcss-animate": "^1.0.7",
     "three": "^0.167.1"
@@ -36,6 +37,7 @@
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "@types/three": "^0.167.2",
     "drizzle-kit": "^0.24.1",
     "eslint": "^8",
     "eslint-config-next": "14.2.6",
