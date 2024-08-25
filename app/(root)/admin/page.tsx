@@ -1,9 +1,14 @@
-import React from 'react'
+'use client';
 
-export default function page() {
-    return (
-        <div>
+import React, { useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 
-        </div>
-    )
+export default function Page() {
+    const router = useRouter();
+
+    useEffect(() => {
+        router.push('/admin/users');
+    }, [router])
+
+    return null;
 }

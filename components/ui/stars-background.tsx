@@ -107,7 +107,7 @@ export const StarsBackground: React.FC<StarBackgroundProps> = ({
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
-    let animationFrameId: number;
+    let animationFrameId: any;
 
     const render = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);

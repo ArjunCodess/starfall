@@ -62,6 +62,26 @@ export async function POST(req: Request) {
         await addUser(user);
         return NextResponse.json({ message: "New user created", user });
     }
+    
+    else if (eventType === "user.updated") {
+        const { id, email_addresses, image_url, first_name, last_name, username, created_at, updated_at } = evt.data;
+    
+        const updatedUser = {
+            clerkId: id,
+            email: email_addresses[0].email_address,
+            name: username!,
+            firstName: first_name,
+            lastName: last_name,
+            username: username,
+            photo: image_url,
+            created_at: created_at,
+            updated_at: updated_at,
+        };
+    
+        // @ts-ignore
+        await updateUser(updatedUser);
+        return NextResponse.json({ message: "User updated", user: updatedUser });
+    }
 
     console.log(`Webhook with and ID of ${id} and type of ${eventType}`);
     console.log("Webhook body: ", body);

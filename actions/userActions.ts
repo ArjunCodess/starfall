@@ -39,3 +39,21 @@ export const addUser = async (user: User) => {
 
     revalidatePath("/");
 };
+
+export const updateUser = async (user: User) => {
+    await db
+        .update(users)
+        .set({
+            // @ts-ignore
+            clerkId: user?.clerkId,
+            email: user?.email,
+            name: user?.name!,
+            firstName: user?.firstName!,
+            lastName: user?.lastName!,
+            username: user?.username!,
+            photo: user?.photo,
+        })
+        .returning({ clerkClientId: users?.clerkId });
+
+    revalidatePath("/");
+};

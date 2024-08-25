@@ -4,49 +4,50 @@ import { FC, useState } from "react";
 import { todoType, User } from "@/types";
 import { addTodo, deleteTodo, editTodo, toggleTodo } from "@/actions/todoActions";
 import AddTodo from "./add-todo";
-import Todo from './todo';
+import Todo from "./todo";
+import { v4 as uuid } from "uuid";
 
 interface Props {
     todos: todoType[];
     user: User;
 }
 
-const Todos: FC<Props> = ({ todos, user }) => {
+const Todos: FC<Props> = ({ todos = [], user }) => {
     // State to manage the list of todo items
     const [todoItems, setTodoItems] = useState<todoType[]>(todos);
 
     // Function to create a new todo item
     const createTodo = (text: string) => {
-        // addUser();
-        const id = new Date().getTime();
-        addTodo(id, text, user?.id);
+        const id = uuid();
+
+        addTodo(id, text, user.id);
         setTodoItems((prev) => [
             ...prev,
-            { id: id, text, done: false, userId: user?.id },
+            { id, text, done: false, userId: user.id },
         ]);
     };
 
     // Function to change the text of a todo item
-    const changeTodoText = (id: number, text: string) => {
+    const changeTodoText = (id: any, text: string) => {
         setTodoItems((prev) =>
-            prev.map((todo) => (todo.id === id ? { ...todo, text } : todo))
+            prev.map((todo) => (todo.id == String(id) ? { ...todo, text } : todo))
         );
         editTodo(id, text);
     };
 
     // Function to toggle the "done" status of a todo item
-    const toggleIsTodoDone = (id: number, done: boolean) => {
+    const toggleIsTodoDone = (id: any, done: boolean) => {
         setTodoItems((prev) =>
             prev.map((todo) =>
-                todo.id === id ? { ...todo, done: !todo.done } : todo
+                todo.id == String(id) ? { ...todo, done: !todo.done } : todo
             )
         );
         toggleTodo(id, done);
     };
 
     // Function to delete a todo item
-    const deleteTodoItem = (id: number) => {
-        setTodoItems((prev) => prev.filter((todo) => todo.id !== id));
+    const deleteTodoItem = (id: any) => {
+        setTodoItems((prev) => prev.filter((todo) => todo.id !== String(id)));
         deleteTodo(id);
     };
 
@@ -56,9 +57,9 @@ const Todos: FC<Props> = ({ todos, user }) => {
             <div className="text-5xl font-medium">To-do app</div>
             <div className="w-full flex flex-col mt-8 gap-2">
                 {/* Mapping through todoItems and rendering Todo component for each */}
-                {todoItems?.map((todo) => (
+                {todoItems.map((todo) => (
                     <Todo
-                        key={`${todo.id}`}
+                        key={todo.id.toString()}
                         todos={todo}
                         changeTodoText={changeTodoText}
                         toggleIsTodoDone={toggleIsTodoDone}

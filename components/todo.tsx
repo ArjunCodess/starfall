@@ -4,15 +4,13 @@ import { ChangeEvent, FC, useState } from "react";
 import { todoType } from "@/types";
 
 interface Props {
-    key: string;
     todos: todoType;
-    changeTodoText: (id: number, text: string) => void;
-    toggleIsTodoDone: (id: number, done: boolean) => void;
-    deleteTodoItem: (id: number) => void;
+    changeTodoText: (id: any, text: string) => void;
+    toggleIsTodoDone: (id: any, done: boolean) => void;
+    deleteTodoItem: (id: any) => void;
 }
 
 const Todo: FC<Props> = ({
-    key,
     todos,
     changeTodoText,
     toggleIsTodoDone,
@@ -64,7 +62,7 @@ const Todo: FC<Props> = ({
 
     // Rendering the Todo component
     return (
-        <div key={key} className="flex items-center gap-2 p-4 border-gray-200 border-solid border rounded-lg">
+        <div className="flex items-center gap-2 p-4 border-gray-200 border-solid border rounded-lg">
             {/* Checkbox for marking the todos as done */}
             <input
                 type="checkbox"

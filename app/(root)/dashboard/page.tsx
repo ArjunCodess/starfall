@@ -13,7 +13,7 @@ export default async function UserDashboard() {
                 <Todos
                     todos={fetchedData[0]?.todos.map(todo => ({
                         ...todo,
-                        id: Number(todo.id) // Ensure id is a number
+                        id: todo.id,
                     }))}
                     user={fetchedData[0]}
                 />
