@@ -15,6 +15,7 @@ export default async function UserDashboard() {
                         ...todo,
                         id: todo.id,
                     }))}
+                    // @ts-ignore
                     user={fetchedData[0]}
                 />
             </main>
