@@ -7,6 +7,7 @@ import { ThemeProvider } from "@/components/theme-provider"
 import { layoutMetadata } from "@/app/data";
 import Footer from "@/components/footer";
 import { Separator } from "@/components/ui/separator";
+import { ToastProvider } from "@/providers/toast-provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -52,17 +53,18 @@ export default function RootLayout({
 }>) {
     return (
         <ClerkProvider>
-            <html lang="en">
+            <html lang="en" suppressHydrationWarning>
                 <body className={inter.className}>
                     <ThemeProvider
                         attribute="class"
-                        defaultTheme="dark"
+                        defaultTheme="light"
                         disableTransitionOnChange
                     >
-                        <div className="max-w-6xl mx-auto h-[100vh]">
+                        <div className="max-w-6xl mx-auto">
                             <Navbar />
+                            <ToastProvider />
                             {children}
-                            <Separator className="mt-20" />
+                            <Separator className="mt-10" />
                             <Footer />
                         </div>
                     </ThemeProvider>

@@ -17,7 +17,6 @@ import {
     navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
 import { general, navbarData } from "@/app/data"
-import { ModeToggle } from "./mode-toggle"
 import { Button } from "./ui/button"
 import {
     Sheet,
@@ -25,9 +24,10 @@ import {
     SheetTrigger,
 } from "@/components/ui/sheet"
 import ShimmerButton from "./magicui/shimmer-button"
+import { ModeToggle } from "./mode-toggle"
 
 export default function Navbar() {
-    const { isSignedIn } = useUser();
+    const { isSignedIn, user } = useUser();
     const [isOpen, setIsOpen] = React.useState(false);
 
     return (
@@ -76,7 +76,7 @@ export default function Navbar() {
                                 </NavigationMenuContent>
                             </NavigationMenuItem>
                             <NavigationMenuItem>
-                                <NavigationMenuTrigger>Pages</NavigationMenuTrigger>
+                                <NavigationMenuTrigger>Components</NavigationMenuTrigger>
                                 <NavigationMenuContent>
                                     <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
                                         {navbarData.map((component) => (
@@ -92,12 +92,21 @@ export default function Navbar() {
                                 </NavigationMenuContent>
                             </NavigationMenuItem>
                             <NavigationMenuItem>
-                                <Link href="/docs" legacyBehavior passHref>
+                                <Link href="/dashboard" legacyBehavior passHref>
                                     <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                                        Documentation
+                                        Dashboard
                                     </NavigationMenuLink>
                                 </Link>
                             </NavigationMenuItem>
+                            {user?.username == general.adminUsername &&
+                                <NavigationMenuItem>
+                                    <Link href="/admin" legacyBehavior passHref>
+                                        <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                                            Admin
+                                        </NavigationMenuLink>
+                                    </Link>
+                                </NavigationMenuItem>
+                            }
                         </NavigationMenuList>
                     </NavigationMenu>
                 </div>
@@ -128,6 +137,7 @@ export default function Navbar() {
                             </Link>
                         </div>
                     )}
+                    <div className="hidden md:inline-block"><ModeToggle /></div>
 
                     {/* Mobile Navigation */}
                     <Sheet open={isOpen} onOpenChange={setIsOpen}>
@@ -142,12 +152,15 @@ export default function Navbar() {
                                 <Link href="/" onClick={() => setIsOpen(false)}>
                                     Home
                                 </Link>
-                                <Link href="/docs" onClick={() => setIsOpen(false)}>
-                                    Documentation
+                                <Link href="/dashboard" onClick={() => setIsOpen(false)}>
+                                    Dashboard
                                 </Link>
-                                <Link href="/components" onClick={() => setIsOpen(false)}>
-                                    Components
-                                </Link>
+                                {user?.username == general.adminUsername &&
+                                    <Link href="/admin" onClick={() => setIsOpen(false)}>
+                                        Admin
+                                    </Link>
+                                }
+                                <ModeToggle />
                             </nav>
                         </SheetContent>
                     </Sheet>

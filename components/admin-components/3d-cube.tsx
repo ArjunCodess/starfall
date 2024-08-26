@@ -200,13 +200,14 @@ function CubeGrid() {
         }
         const onTouchEnd = stopDragging
 
+        // UNCOMMENT THIS TO ENABLE DRAGGING THE CUBE
         // Add event listeners
-        window.addEventListener('mousedown', onMouseDown)
-        window.addEventListener('mousemove', onMouseMove)
-        window.addEventListener('mouseup', onMouseUp)
-        window.addEventListener('touchstart', onTouchStart, { passive: false })
-        window.addEventListener('touchmove', onTouchMove, { passive: false })
-        window.addEventListener('touchend', onTouchEnd)
+        // window.addEventListener('mousedown', onMouseDown)
+        // window.addEventListener('mousemove', onMouseMove)
+        // window.addEventListener('mouseup', onMouseUp)
+        // window.addEventListener('touchstart', onTouchStart, { passive: false })
+        // window.addEventListener('touchmove', onTouchMove, { passive: false })
+        // window.addEventListener('touchend', onTouchEnd)
 
         // Animation loop
         const animate = (time: number) => {
@@ -251,12 +252,8 @@ function CubeGrid() {
             window.removeEventListener('touchstart', onTouchStart)
             window.removeEventListener('touchmove', onTouchMove)
             window.removeEventListener('touchend', onTouchEnd)
-            if (mountRef.current && rendererRef.current) {
-                mountRef.current.removeChild(renderer.domElement)
-            }
-            if (rendererRef.current) {
-                rendererRef.current.dispose()
-            }
+            if (mountRef.current && rendererRef.current) mountRef.current.removeChild(renderer.domElement);
+            if (rendererRef.current) rendererRef.current.dispose();
         }
     }, [])
 
@@ -264,11 +261,10 @@ function CubeGrid() {
         <div
             ref={mountRef}
             style={{
-                width: '100%',
-                height: '100vh',
                 cursor: isHovering ? 'grab' : 'default',
                 touchAction: 'none'
             }}
+            className='w-full h-full flex justify-center items-center'
         />
     )
 }

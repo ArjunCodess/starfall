@@ -5,6 +5,7 @@ import { revalidatePath } from "next/cache";
 import { db } from "@/db/drizzle";
 import { users } from "@/db/schema";
 import { User } from "@/types";
+import { eq } from "drizzle-orm";
 
 export const getAllUsers = async () => {
     const data = await db.select().from(users);
@@ -33,24 +34,6 @@ export const addUser = async (user: User) => {
             firstName: user?.firstName,
             lastName: user?.lastName,
             username: user?.username,
-            photo: user?.photo,
-        })
-        .returning({ clerkClientId: users?.clerkId });
-
-    revalidatePath("/");
-};
-
-export const updateUser = async (user: User) => {
-    await db
-        .update(users)
-        .set({
-            // @ts-ignore
-            clerkId: user?.clerkId,
-            email: user?.email,
-            name: user?.name!,
-            firstName: user?.firstName!,
-            lastName: user?.lastName!,
-            username: user?.username!,
             photo: user?.photo,
         })
         .returning({ clerkClientId: users?.clerkId });

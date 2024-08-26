@@ -8,7 +8,7 @@ export type User = {
     id: string;
     name: string;
     email: string;
-    clerkid: string;
+    clerkId: string;
     firstName: string | null;
     lastName: string | null;
     username: string | null;

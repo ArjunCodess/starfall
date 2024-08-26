@@ -44,6 +44,7 @@ export const layoutMetadata = {
 
 export const general = {
     productName: "Product Name",
+    adminUsername: "arjuncodess",
 }
 
 export const pricingTiers = [

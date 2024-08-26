@@ -25,7 +25,7 @@ interface StarBackgroundProps {
   className?: string;
 }
 
-export const StarsBackground: React.FC<StarBackgroundProps> = ({
+export const StarsBackgroundLight: React.FC<StarBackgroundProps> = ({
   starDensity = 0.00015,
   allStarsTwinkle = true,
   twinkleProbability = 0.7,
@@ -114,7 +114,7 @@ export const StarsBackground: React.FC<StarBackgroundProps> = ({
       stars.forEach((star) => {
         ctx.beginPath();
         ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(255, 255, 255, ${star.opacity})`;
+        ctx.fillStyle = `rgba(0, 0, 0, ${star.opacity})`;
         ctx.fill();
 
         if (star.twinkleSpeed !== null) {

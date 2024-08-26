@@ -78,14 +78,20 @@ const config = {
                         transform: "translate(calc(100cqw - 100%), 0)",
                     },
                 },
+                marquee: {
+                    to: { transform: 'translateX(-50%)' }
+                },
             },
             animation: {
                 "spin-around": "spin-around calc(var(--speed) * 2) infinite linear",
                 slide: "slide var(--speed) ease-in-out infinite alternate",
+                marquee: 'marquee var(--duration, 30s) linear infinite',
             },
         },
     },
-    plugins: [require("tailwindcss-animate")],
+    plugins: [
+        require("tailwindcss-animate"),
+    ],
 } satisfies Config
 
 export default config

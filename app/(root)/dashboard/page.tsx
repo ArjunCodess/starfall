@@ -9,7 +9,7 @@ export default async function UserDashboard() {
 
     return (
         fetchedData && (
-            <main className="flex items-center justify-between">
+            <main className="flex items-center justify-between mt-5 md:mt-10">
                 <Todos
                     todos={fetchedData[0]?.todos.map(todo => ({
                         ...todo,
