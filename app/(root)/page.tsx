@@ -28,7 +28,7 @@ export default function Home() {
                     <StarsBackgroundLight />
                     <StarsBackgroundDark />
                 </BackgroundBeams>
-                <Image src="/hero.webp" className="w-full rounded-md border-2 border-neutral-400" width={500} height={500} alt="Main Product Image" />
+                <Image src="/hero.webp" className="w-full rounded-md border-2 border-blue-500 hover:shadow-2xl transition-all duration-300" width={500} height={500} alt="Main Product Image" />
             </section>
 
             <Separator className="mt-20 mb-10" />

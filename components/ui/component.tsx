@@ -38,7 +38,7 @@ const ComponentTitle = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <h5
     ref={ref}
-    className={cn("mb-1 font-medium leading-none tracking-tight", className)}
+    className={cn("mb-1 font-medium leading-none tracking-tight flex items-center gap-x-2", className)}
     {...props}
   />
 ))
@@ -50,7 +50,7 @@ const ComponentContent = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <div
     ref={ref}
-    className={cn("text-sm [&_p]:leading-relaxed", className)}
+    className={cn("text-sm [&_p]:leading-relaxed border rounded-md flex items-center justify-between mt-4 overflow-hidden", className)}
     {...props}
   />
 ))

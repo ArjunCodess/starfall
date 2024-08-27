@@ -10,7 +10,7 @@ export default function Pricing() {
                         key={index}
                         className={`flex flex-col p-6 rounded-lg transition-transform duration-300 transform hover:scale-105 ${
                             tier.highlighted
-                                ? "bg-white dark:bg-neutral-800 border-2 border-blue-400 shadow-2xl shadow-blue-400/20"
+                                ? "bg-white dark:bg-neutral-800 border border-blue-400 shadow-2xl shadow-blue-400/20"
                                 : "bg-white dark:bg-neutral-800 border dark:border-none"
                         }`}
                     >
