@@ -1,7 +1,9 @@
 import { Button } from "@/components/ui/button"
-import { footerLinks } from "@/app/data"
+import { DATA } from "@/app/data"
 import { clsx } from "clsx"
 import Link from "next/link"
+
+const footerLinks = DATA.footerLinks;
 
 export default function Footer() {
     return (

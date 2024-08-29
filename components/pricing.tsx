@@ -1,5 +1,7 @@
-import { pricingTiers } from "@/app/data";
+import { DATA } from "@/app/data";
 import { Check, HelpCircle, X } from "lucide-react";
+
+const pricingTiers = DATA.pricingTiers;
 
 export default function Pricing() {
     return (

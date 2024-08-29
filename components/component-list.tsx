@@ -3,10 +3,10 @@
 import { Server } from "lucide-react"
 import { Component, ComponentContent, ComponentTitle } from "./ui/component"
 
-import Cube from "./admin-components/3d-cube"
-import Pricing from "./admin-components/pricing"
-import Hero from "./admin-components/hero"
-import Authentication from "./admin-components/authentication"
+import Cube from "./admin/3d-cube"
+import Pricing from "./admin/pricing"
+import Hero from "./admin/hero"
+import Authentication from "./admin/authentication"
 
 export default function ComponentList() {
     return (

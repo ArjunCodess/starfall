@@ -4,12 +4,14 @@ import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
 import Navbar from "@/components/navbar";
 import { ThemeProvider } from "@/components/theme-provider"
-import { layoutMetadata } from "@/app/data";
+import { DATA } from "@/app/data";
 import Footer from "@/components/footer";
 import { Separator } from "@/components/ui/separator";
 import { ToastProvider } from "@/providers/toast-provider";
 
 const inter = Inter({ subsets: ["latin"] });
+
+const layoutMetadata = DATA.layoutMetadata;
 
 export const metadata: Metadata = {
     metadataBase: new URL(layoutMetadata.url),

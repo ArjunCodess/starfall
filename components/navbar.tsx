@@ -16,7 +16,7 @@ import {
     NavigationMenuTrigger,
     navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
-import { general, navbarData } from "@/app/data"
+import { DATA } from "@/app/data"
 import { Button } from "./ui/button"
 import {
     Sheet,
@@ -25,6 +25,9 @@ import {
 } from "@/components/ui/sheet"
 import ShimmerButton from "./magicui/shimmer-button"
 import { ModeToggle } from "./mode-toggle"
+
+const navbarData = DATA.navbarData;
+const general = DATA.general;
 
 export default function Navbar() {
     const { isSignedIn, user } = useUser();
