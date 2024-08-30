@@ -14,14 +14,14 @@ export default function Home() {
         <main className="mx-4 sm:mx-6 md:mx-8 lg:mx-12">
             <div
                 aria-hidden="true"
-                className="flex absolute -top-96 start-1/2 transform -translate-x-1/2 w-full "
+                className="flex absolute -top-96 start-1/2 transform -translate-x-1/2 w-full"
             >
                 <div className="bg-gradient-to-r from-background/50 to-background blur-3xl w-[25rem] h-[44rem] rotate-[-60deg] transform -translate-x-[10rem]" />
                 <div className="bg-gradient-to-tl blur-3xl w-[90rem] h-[50rem] rounded-full origin-top-left -rotate-12 -translate-x-[15rem] from-primary-foreground to-background" />
             </div>
 
-            <section className="min-h-[30vh] flex flex-col justify-center items-center mt-10 sm:mt-16 md:mt-20">
-                <BackgroundBeams className="flex flex-col text-center px-4 sm:px-6 md:px-8">
+            <section className="min-h-[30vh] flex flex-col justify-center items-center mt-7 sm:mt-10 md:mt-0">
+                <BackgroundBeams className="flex flex-col text-center px-4">
                     <h2 className="text-2xl sm:text-3xl md:text-5xl lg:text-7xl font-bold text-black dark:text-white font-sans tracking-tight">
                         Neon OSS Starter Kit Challenge Submission by @ArjunCodess
                     </h2>
