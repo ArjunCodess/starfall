@@ -2,7 +2,7 @@
 
 import { FC, useState } from "react"
 import { todoType, User } from "@/types"
-import { addTodo, deleteTodo, editTodo, toggleTodo } from "@/actions/todoActions"
+import { addTodo, deleteTodo, editTodo, toggleTodo } from "@/actions/todo-actions"
 import AddTodo from "./add-todo"
 import Todo from "./todo"
 import { v4 as uuid } from "uuid"

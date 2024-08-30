@@ -40,3 +40,22 @@ export const addUser = async (user: User) => {
 
     revalidatePath("/");
 };
+
+export const updateUser = async (user: Partial<User>) => {
+    if (!user.clerkId) throw new Error("ClerkId is required for updating a user");
+
+    await db
+        .update(users)
+        .set({
+            email: user.email,
+            name: user.name,
+            firstName: user.firstName!,
+            lastName: user.lastName!,
+            username: user.username!,
+            photo: user.photo,
+            updatedAt: new Date(),
+        })
+        .where(eq(users.clerkId, user.clerkId));
+
+    revalidatePath("/");
+}

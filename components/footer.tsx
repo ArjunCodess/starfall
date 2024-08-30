@@ -51,8 +51,8 @@ export default function Footer() {
                     ))}
                 </div>
             </div>
-            <div className="mt-20 relative">
-                <p className="text-center text-7xl sm:text-8xl md:text-9xl lg:text-9xl font-bold leading-none">
+            <div className="mt-12 sm:mt-20 relative">
+                <p className="text-center text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-bold leading-none">
                     <span className="bg-gradient-to-t from-neutral-200 to-neutral-400 dark:from-neutral-900 dark:to-transparent bg-clip-text text-transparent">
                         DevStudio
                     </span>

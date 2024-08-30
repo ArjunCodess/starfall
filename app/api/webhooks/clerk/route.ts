@@ -1,7 +1,7 @@
 import { Webhook } from "svix";
 import { headers } from "next/headers";
 import { WebhookEvent } from "@clerk/nextjs/server";
-import { addUser } from "@/actions/userActions";
+import { addUser, updateUser } from "@/actions/user-actions";
 import { NextResponse } from "next/server";
 
 export async function POST(req: Request) {
@@ -62,24 +62,24 @@ export async function POST(req: Request) {
         await addUser(user);
         return NextResponse.json({ message: "New user created", user });
     }
+    
+    else if (eventType === "user.updated") {
+        const { id, email_addresses, image_url, first_name, last_name, username, updated_at } = evt.data;
 
-    //     else if (eventType === "user.updated") {
-    //         const { email_addresses, image_url, first_name, last_name, username, updated_at } = evt.data;
+        const updatedUser = {
+            clerkId: id,
+            email: email_addresses[0].email_address,
+            name: username!,
+            firstName: first_name,
+            lastName: last_name,
+            username: username,
+            photo: image_url,
+            updated_at: updated_at,
+        };
 
-    //         const updatedUser = {
-    //             email: email_addresses[0].email_address,
-    //             name: username!,
-    //             firstName: first_name,
-    //             lastName: last_name,
-    //             username: username,
-    //             photo: image_url,
-    //             updated_at: updated_at,
-    //         };
-
-    //         // @ts-ignore
-    //         await updateUser(updatedUser);
-    //         return NextResponse.json({ message: "User updated", user: updatedUser });
-    //     }
+        await updateUser(updatedUser);
+        return NextResponse.json({ message: "User updated", user: updatedUser });
+    }
 
     console.log(`Webhook with and ID of ${id} and type of ${eventType}`);
     console.log("Webhook body: ", body);

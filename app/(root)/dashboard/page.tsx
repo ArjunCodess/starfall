@@ -1,4 +1,4 @@
-import { getUser } from "@/actions/userActions";
+import { getUser } from "@/actions/user-actions";
 import Todos from "@/components/todos";
 import { currentUser } from "@clerk/nextjs/server";
 

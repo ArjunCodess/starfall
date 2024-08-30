@@ -7,7 +7,7 @@ import { ThemeProvider } from "@/components/theme-provider"
 import { DATA } from "@/app/data";
 import Footer from "@/components/footer";
 import { Separator } from "@/components/ui/separator";
-import { ToastProvider } from "@/providers/toast-provider";
+import Credit from "@/components/credit";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -64,8 +64,8 @@ export default function RootLayout({
                     >
                         <div className="max-w-6xl mx-auto">
                             <Navbar />
-                            <ToastProvider />
                             {children}
+                            <Credit />
                             <Separator className="mt-10" />
                             <Footer />
                         </div>

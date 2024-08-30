@@ -16,3 +16,13 @@ export type User = {
     createdAt: Date | number | null;
     updatedAt: Date | number | null;
 };
+
+export type Todo = {
+    todoId: string;
+    text: string;
+    done: boolean;
+    userId: string;
+    firstName: string | null;
+    lastName: string | null;
+    photo: string | null;
+}
