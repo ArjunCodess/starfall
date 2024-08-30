@@ -131,13 +131,6 @@ export default function Navbar() {
                                     </span>
                                 </ShimmerButton>
                             </Link>
-                            <Link href="/sign-up" className="hidden md:inline-flex">
-                                <ShimmerButton className="shadow-2xl">
-                                    <span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10">
-                                        Sign Up
-                                    </span>
-                                </ShimmerButton>
-                            </Link>
                         </div>
                     )}
                     <div className="hidden md:inline-block"><ModeToggle /></div>

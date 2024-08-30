@@ -8,6 +8,7 @@ import { StarsBackgroundLight } from "@/components/ui/stars-background-light";
 import { StarsBackgroundDark } from "@/components/ui/stars-background-dark";
 import Logos from "@/components/logos";
 import CallToAction from "@/components/call-to-action";
+import VideoPlayer from "@/components/video-player";
 
 export default function Home() {
     return (
@@ -29,7 +30,11 @@ export default function Home() {
                     <StarsBackgroundLight />
                     <StarsBackgroundDark />
                 </BackgroundBeams>
-                <Image src="/hero.webp" className="w-full rounded-md border border-blue-500 hover:shadow-2xl transition-all duration-300" width={1000} height={1000} alt="Main Product Image" />
+                <VideoPlayer
+                    thumbnailSrc="/hero.webp"
+                    videoSrc="/rickroll.mp4"
+                    title="Main Video"
+                />
             </section>
 
             <Separator className="mt-16 sm:mt-20 mb-8 sm:mb-10" />

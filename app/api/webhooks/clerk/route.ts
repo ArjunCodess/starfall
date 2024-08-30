@@ -3,6 +3,7 @@ import { headers } from "next/headers";
 import { WebhookEvent } from "@clerk/nextjs/server";
 import { addUser, updateUser } from "@/actions/user-actions";
 import { NextResponse } from "next/server";
+import { User } from "@/types";
 
 export async function POST(req: Request) {
     const WEBHOOK_SECRET = process.env.WEBHOOK_SECRET;
@@ -14,11 +15,8 @@ export async function POST(req: Request) {
     const svix_timestamp = headerPayload.get("svix-timestamp");
     const svix_signature = headerPayload.get("svix-signature");
 
-    if (!svix_id || !svix_timestamp || !svix_signature) {
-        return new Response("Error occured -- no svix headers", {
-            status: 400,
-        });
-    }
+    if (!svix_id || !svix_timestamp || !svix_signature)
+        return new Response("Error occured -- no svix headers", { status: 400 });
 
     const payload = await req.json();
     const body = JSON.stringify(payload);
@@ -58,18 +56,17 @@ export async function POST(req: Request) {
             updated_at: updated_at,
         };
 
-        // @ts-ignore
-        await addUser(user);
+        await addUser(user as unknown as User);
         return NextResponse.json({ message: "New user created", user });
     }
-    
+
     else if (eventType === "user.updated") {
         const { id, email_addresses, image_url, first_name, last_name, username, updated_at } = evt.data;
 
         const updatedUser = {
             clerkId: id,
             email: email_addresses[0].email_address,
-            name: username!,
+            name: username,
             firstName: first_name,
             lastName: last_name,
             username: username,
@@ -77,12 +74,12 @@ export async function POST(req: Request) {
             updated_at: updated_at,
         };
 
-        await updateUser(updatedUser);
+        await updateUser(updatedUser as unknown as User);
         return NextResponse.json({ message: "User updated", user: updatedUser });
     }
 
     console.log(`Webhook with and ID of ${id} and type of ${eventType}`);
     console.log("Webhook body: ", body);
 
-    return new Response("User Created!", { status: 200 });
+    return NextResponse.json({ message: "Webhook received" }, { status: 200 });
 }

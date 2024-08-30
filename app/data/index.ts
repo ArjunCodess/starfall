@@ -38,13 +38,13 @@ export const DATA = {
     ],
 
     layoutMetadata: {
-        url: "https://www.example.com",
-        metadataTitle: "Example Website",
-        metadataDescription: "This is an example website for demonstration purposes.",
+        url: "https://neon-oss-starter-kit.vercel.app/",
+        metadataTitle: "Starfall",
+        metadataDescription: "Starfall is a comprehensive full-stack web application starter kit for developers, built with Next.js and leveraging modern technologies and best practices.",
     },
 
     general: {
-        productName: "Product Name",
+        productName: "Starfall",
         adminUsername: "arjuncodess",
     },
 
@@ -99,7 +99,7 @@ export const DATA = {
 
     footerLinks: [
         {
-            title: "Company",
+            title: "Starfall",
             items: [
                 { label: "About Us", href: "/about" },
                 { label: "Careers", href: "/careers" },
@@ -117,9 +117,9 @@ export const DATA = {
         {
             title: "Social Media",
             items: [
-                { label: "Twitter", href: "https://twitter.com/DevStudio" },
-                { label: "LinkedIn", href: "https://linkedin.com/company/devstudio" },
-                { label: "Instagram", href: "https://instagram.com/DevStudio" },
+                { label: "Twitter", href: "https://twitter.com/arjuncodess" },
+                { label: "LinkedIn", href: "https://linkedin.com/in/arjuncodess" },
+                { label: "Instagram", href: "https://instagram.com/arjuncodess" },
             ],
         },
     ],
