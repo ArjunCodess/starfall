@@ -115,14 +115,7 @@ export default function Navbar() {
                 </div>
 
                 <div className="flex items-center gap-x-2 md:gap-x-5">
-                    {isSignedIn ? (
-                        <>
-                            <UserButton />
-                            <Button size="sm" className="hidden md:inline-flex">
-                                <SignOutButton />
-                            </Button>
-                        </>
-                    ) : (
+                    {isSignedIn ? <UserButton /> : (
                         <div className="flex items-center gap-x-2 md:gap-x-5">
                             <Link href="/sign-in">
                                 <ShimmerButton className="shadow-2xl">

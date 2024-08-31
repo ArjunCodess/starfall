@@ -8,6 +8,7 @@ import { DATA } from "@/app/data";
 import Footer from "@/components/footer";
 import { Separator } from "@/components/ui/separator";
 import Credit from "@/components/credit";
+import { Analytics } from "@vercel/analytics/react"
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -68,6 +69,7 @@ export default function RootLayout({
                             <Credit />
                             <Separator className="mt-10" />
                             <Footer />
+                            <Analytics />
                         </div>
                     </ThemeProvider>
                 </body>
