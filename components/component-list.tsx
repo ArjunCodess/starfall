@@ -15,7 +15,7 @@ export default function ComponentList() {
                 <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-neutral-900 dark:text-white tracking-tight">
                     Admin Components
                 </h2>
-                <p className="text-neutral-600 dark:text-neutral-400">These are the components you can use in your application. (<code>@/components/@/components/admin</code>)</p>
+                <p className="text-neutral-600 dark:text-neutral-400">These are the components you can use in your application. (<code>@/components/admin</code>)</p>
             </div>
             <div className='flex flex-col gap-10'>
                 <Component>
