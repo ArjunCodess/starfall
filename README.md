@@ -105,7 +105,7 @@ These are the commands that you can use and what they do in brief:
 - **`npm run db:generate`** - Generates migrations based on your Drizzle schema, creating migration files that can be applied to your database.
 - **`npm run db:migrate`** - Applies the generated migrations to your database, ensuring it matches your schema.
 
-## My Journey 👨‍💻
+## 👨‍💻 My Journey
 
 I chose this stack because it provides a complete set of tools for modern web development.
 
@@ -113,7 +113,7 @@ Using Next.js and Tailwind CSS makes building fast, responsive apps easy. Neon a
 
 Throughout this process, I learned how to integrate these tools effectively. It was challenging but rewarding to see everything come together in a single starter kit. I would like to thank DEV and Neon for organising a challenge like this!
 
-## Features 👌
+## 👌 Features
 
 Starfall is packed with features that streamline full-stack web development.
 
@@ -121,13 +121,13 @@ The starter kit includes a complete full-stack to-do-list app with Next.js, Tail
 
 These tools work together to help you build fast, secure, and scalable applications quickly.
 
-## Challenges Faced 💢
+## 💢 Challenges Faced
 
 One of the biggest challenges I faced was writing the documentation.
 
 It was tough to organize everything clearly, but I made it through. On the flip side, building the "extra" components and the admin page was a lot of fun. The dashboard page was surprisingly quick to put together, taking the least time overall.
 
-## Future Plans ☘
+## ☘ Future Plans
 
 The Starfall template is complete on my end.
 
@@ -135,7 +135,7 @@ However, I’m open to continuing its development if there’s enough interest f
 
 With more feedback and contributions, I’d love to see where this project could go.
 
-## Community Contribution 🤝
+## 🤝 Community Contribution
 
 I’m always open to new ideas and feedback from the community.
 
@@ -145,7 +145,7 @@ Your input is valuable, and I’m excited to see how this project can evolve wit
 
 ---
 
-## PS
+## ✍ PS
 
 Thanks for checking out Starfall! 🎉
 
