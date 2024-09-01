@@ -89,14 +89,14 @@ const Todo: FC<Props> = ({ todo, changeTodoText, toggleIsTodoDone, deleteTodoIte
                                     Delete
                                 </DropdownMenuItem>
                             </DialogTrigger>
-                            <DialogContent>
+                            <DialogContent className="rounded-lg">
                                 <DialogHeader className="mt-1">
                                     <DialogTitle>Are you sure you want to delete this todo?</DialogTitle>
                                     <DialogDescription>
                                         This action cannot be undone. This will permanently delete your todo.
                                     </DialogDescription>
                                 </DialogHeader>
-                                <DialogFooter>
+                                <DialogFooter className="flex flex-col-reverse md:flex-row gap-2">
                                     <Button variant="outline" onClick={() => setIsDeleteDialogOpen(false)}>
                                         Cancel
                                     </Button>

@@ -23,7 +23,6 @@ import {
     SheetContent,
     SheetTrigger,
 } from "@/components/ui/sheet"
-import ShimmerButton from "./magicui/shimmer-button"
 import { ModeToggle } from "./mode-toggle"
 
 const navbarData = DATA.navbarData;
@@ -118,11 +117,9 @@ export default function Navbar() {
                     {isSignedIn ? <UserButton /> : (
                         <div className="flex items-center gap-x-2 md:gap-x-5">
                             <Link href="/sign-in">
-                                <ShimmerButton className="shadow-2xl">
-                                    <span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10">
-                                        Log In
-                                    </span>
-                                </ShimmerButton>
+                                <Button>
+                                    Log In
+                                </Button>
                             </Link>
                         </div>
                     )}

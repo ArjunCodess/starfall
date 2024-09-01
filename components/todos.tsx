@@ -8,6 +8,7 @@ import Todo from "./todo"
 import { v4 as uuid } from "uuid"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { AnimatePresence, motion } from "framer-motion"
+import { toast } from "sonner"
 
 interface Props {
     todos: todoType[]
@@ -19,7 +20,12 @@ const Todos: FC<Props> = ({ todos = [], user }) => {
 
     const createTodo = (text: string) => {
         const id = uuid()
-        addTodo(id, text, user.id)
+        const promise = addTodo(id, text, user.id)
+        toast.promise(promise, {
+            loading: 'Creating todo...',
+            success: 'Todo created!',
+            error: 'Error creating todo',
+        })
         setTodoItems((prev) => [
             { id, text, done: false, userId: user.id },
             ...prev,
@@ -30,19 +36,34 @@ const Todos: FC<Props> = ({ todos = [], user }) => {
         setTodoItems((prev) =>
             prev.map((todo) => (todo.id === id ? { ...todo, text } : todo))
         )
-        editTodo(id, text)
+        const promise = editTodo(id, text)
+        toast.promise(promise, {
+            loading: 'Updating todo...',
+            success: 'Todo updated!',
+            error: 'Error updating todo',
+        })
     }
 
     const toggleIsTodoDone = (id: string, done: boolean) => {
         setTodoItems((prev) =>
             prev.map((todo) => (todo.id === id ? { ...todo, done: !todo.done } : todo))
         )
-        toggleTodo(id, done)
+        const promise = toggleTodo(id, done)
+        toast.promise(promise, {
+            loading: 'Updating todo status...',
+            success: 'Todo status updated!',
+            error: 'Error updating todo status',
+        })
     }
 
     const deleteTodoItem = (id: string) => {
         setTodoItems((prev) => prev.filter((todo) => todo.id !== id))
-        deleteTodo(id)
+        const promise = deleteTodo(id)
+        toast.promise(promise, {
+            loading: 'Deleting todo...',
+            success: 'Todo deleted!',
+            error: 'Error deleting todo',
+        })
     }
 
     return (
