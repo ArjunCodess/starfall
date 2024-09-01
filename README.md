@@ -16,10 +16,10 @@ Here's a quick tour of the application:
 
 | Light Mode | Dark Mode |
 |------------|-----------|
-| '/' page![Light1](/public/light1.png "Light Mode") | '/' page![Dark1](/public/dark1.png "Dark Mode") |
-| '/dashboard' page![Light2](/public/light2.png "Light Mode") | '/dashboard' page![Dark2](/public/dark2.png "Dark Mode") |
-| '/admin' page![Light3](/public/light3.png "Light Mode") | '/admin' page![Dark3](/public/dark3.png "Dark Mode") |
-| '/admin' page![Light4](/public/light4.png "Light Mode") | '/admin' page![Dark4](/public/dark4.png "Dark Mode") |
+| '/' page![Light1](/public/light1.PNG "Light Mode") | '/' page![Dark1](/public/dark1.PNG "Dark Mode") |
+| '/dashboard' page![Light2](/public/light2.PNG "Light Mode") | '/dashboard' page![Dark2](/public/dark2.PNG "Dark Mode") |
+| '/admin' page![Light3](/public/light3.PNG "Light Mode") | '/admin' page![Dark3](/public/dark3.PNG "Dark Mode") |
+| '/admin' page![Light4](/public/light4.PNG "Light Mode") | '/admin' page![Dark4](/public/dark4.PNG "Dark Mode") |
 
 ## 🛠️ Core Technologies
 
