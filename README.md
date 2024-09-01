@@ -1,5 +1,7 @@
 # Starfall - Full-Stack Web Application Starter Kit
 
+<video src="https://github.com/user-attachments/assets/eaef4da2-e49c-48b1-9e84-7080a7a3b217" controls autoPlay>Your browser does not support the video tag.</video>
+
 Starfall is a Neon-powered starter kit to streamline building full-stack web applications for developers.
 
 It comes equipped with everything developers need to create cutting-edge, high-performance apps.
