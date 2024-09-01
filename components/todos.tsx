@@ -67,7 +67,7 @@ const Todos: FC<Props> = ({ todos = [], user }) => {
     }
 
     return (
-        <Card className="w-full max-w-2xl mx-auto border-0">
+        <Card className="w-full max-w-2xl mx-auto border-0 min-h-[90vh]">
             <CardHeader>
                 <CardTitle className="text-3xl md:text-5xl font-bold text-center">Todo App</CardTitle>
             </CardHeader>

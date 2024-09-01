@@ -8,6 +8,19 @@ The purpose of Starfall is to provide developers with an easy-to-use full-stack 
 
 It has all the resources you want to construct innovative, scalable & reactive applications.
 
+Full documentation can be found at [Starfall Docs](https://starfall-docs.vercel.app/).
+
+## 🧳 Application Tour
+
+Here's a quick tour of the application:
+
+| Light Mode | Dark Mode |
+|------------|-----------|
+| '/' page![Light1](/public/light1.png "Light Mode") | '/' page![Dark1](/public/dark1.png "Dark Mode") |
+| '/dashboard' page![Light2](/public/light2.png "Light Mode") | '/dashboard' page![Dark2](/public/dark2.png "Dark Mode") |
+| '/admin' page![Light3](/public/light3.png "Light Mode") | '/admin' page![Dark3](/public/dark3.png "Dark Mode") |
+| '/admin' page![Light4](/public/light4.png "Light Mode") | '/admin' page![Dark4](/public/dark4.png "Dark Mode") |
+
 ## 🛠️ Core Technologies
 
 A quick look at what Starfall offers:
